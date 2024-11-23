@@ -151,14 +151,13 @@ class MainWindow(QMainWindow):
         self.metadata_display.clear()
         self.metadata_display.addTopLevelItem(QTreeWidgetItem([message]))
         self.metadata_display.show()
-        self.splitter.setSizes([400, 300])
+        self.splitter.setSizes([400, 600])
 
     def add_info_to_tree(self, parent_item, info_dict):
         for key, value in info_dict.items():
             parent_item.addChild(QTreeWidgetItem([f"{key}: {value}"]))
 
     def build_metadata_tree(self, device_info, gps_info, datetime_info, data, address):
-        # Device Information
         if device_info:
             device_item = QTreeWidgetItem(["Device Information"])
             self.add_info_to_tree(device_item, device_info)
@@ -249,7 +248,7 @@ class MainWindow(QMainWindow):
         self.metadata_display.expandAll()
         self.metadata_display.show()
         self.export_button.show()
-        self.splitter.setSizes([400, 300])
+        self.splitter.setSizes([400, 600])
 
         self.current_image_filename = filename
 
@@ -273,7 +272,6 @@ class MainWindow(QMainWindow):
                         json.dump(export_data, file, indent=4)
                 except Exception as e:
                     self.show_error(f"Failed to export JSON: {e}")
-
 
 class DropArea(QLabel):
     file_dropped = pyqtSignal(str)
