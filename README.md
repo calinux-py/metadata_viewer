@@ -13,4 +13,3 @@ Metadata Viewer is a PyQt5-based desktop application that allows users to view m
   - Date/Time Information
   - All Metadata
 - **JSON Export**: Save metadata to a JSON file with a single click.
-- **Dark Theme**: A visually appealing dark-themed interface.
